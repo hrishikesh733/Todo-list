@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #000430;
+  --secondaryBackground: #171c43;
+  --text: #fff;
+  --purple: #828dff;
+  --teal: #24feee;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 80px auto 0 auto;
+  max-width: 500px;
+}
+
+.stats-container {
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--purple);
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+}
+
+.details {
+  width: 100%;
+}
+.details p{
+    margin-top: 30px;
+    margin-left: 5px;
+    float: left;
+    font-size: 20px;
+}
+
+#progressbar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--secondaryBackground);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#progress {
+  width: 80%;
+  height: 10px;
+  background-color: var(--teal);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#numbers {
+  width: 100px;
+  height: 100px;
+  background-color: var(--purple);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+form {
+  margin-top: 40px;
+  margin-bottom: 30px; /* Adds space below input */
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 16px;
+  background-color: var(--secondaryBackground);
+  border: 1px solid var(--purple);
+  border-radius: 10px;
+  outline: none;
+  color: var(--text);
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple);
+  color: var(--text);
+  font-size: 30px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.task-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    list-style: none;
+}
+
+.taskitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondaryBackground);
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--purple);
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.taskitem .task {
+  display: flex;
+  align-items: center;
+  
+  
+  
+}
+.task input{
+    height: 20px;
+    width: 20px;
+    
+}
+
+.taskitem p {
+  padding-left: 15px;
+  font-size: 20px;
+   font-family: 'Segoe UI', sans-serif;
+  align-items: center;
+  word-break: break-word;
+
+
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  
+
+}
+.we{
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 50px;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s forwards;
+}
+
+.pop {
+  animation: pop 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.icon img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon img:hover {
+  transform: scale(1.2);
+}
+/* Editable Text Highlight */
+.task p:focus {
+  outline: 1px dashed var(--teal);
+  background-color: rgba(36, 254, 238, 0.1);
+  border-radius: 5px;
+}
+.completed p{
+    text-decoration: line-through;
+    color: #24feee;
+
+}
